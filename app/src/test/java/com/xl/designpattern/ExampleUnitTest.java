@@ -2,7 +2,9 @@ package com.xl.designpattern;
 
 import org.junit.Test;
 
+import com.xl.designpattern.proxy.IUser;
 import com.xl.designpattern.proxy.User;
+import com.xl.designpattern.proxy.dynamic.UserProxyInvocationHandler;
 import com.xl.designpattern.proxy.static1.UserProxy;
 
 /**
@@ -74,11 +76,19 @@ public class ExampleUnitTest {
 //        computer.getName();
 //        computer2.getName();
 
-//        static proxy
+////        static proxy
+//        User user = new User();
+//        UserProxy userProxy = new UserProxy();
+//        userProxy.setUser(user);
+//        userProxy.add();
 
-        User user = new User();
-        UserProxy userProxy = new UserProxy();
-        userProxy.setUser(user);
-        userProxy.add();
+////        dynamic proxy
+//        User user = new User();
+//        UserProxyInvocationHandler userProxy = new UserProxyInvocationHandler();
+//        userProxy.setTarget(user);
+//        IUser user1 = (IUser) userProxy.getTarget();
+//        user1.delete();
+
+
     }
 }
