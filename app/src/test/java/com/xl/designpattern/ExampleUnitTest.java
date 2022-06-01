@@ -4,6 +4,10 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+import com.xl.designpattern.adapter.Adapter;
+import com.xl.designpattern.adapter.Adapter2;
+import com.xl.designpattern.adapter.Computer;
+import com.xl.designpattern.adapter.NetworkCable;
 import com.xl.designpattern.chain.Director;
 import com.xl.designpattern.chain.GroupLeader;
 import com.xl.designpattern.chain.Leader;
@@ -70,8 +74,15 @@ public class ExampleUnitTest {
 //        route.setting();
 //        route.openWifi();
 
-
-
+//        Adapter
+//      电脑
+        Computer computer = new Computer();
+//      网线
+        NetworkCable networkCable = new NetworkCable();
+//      适配器 - 连接网线
+        Adapter2 adapter = new Adapter2(networkCable);
+//      电脑连接 适配器，适配器连接网线 -> 上网
+        computer.connect(adapter);
 
     }
 }
