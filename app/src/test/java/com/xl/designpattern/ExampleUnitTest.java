@@ -2,29 +2,8 @@ package com.xl.designpattern;
 
 import org.junit.Test;
 
-import static org.junit.Assert.*;
-
-import com.xl.designpattern.adapter.Adapter;
-import com.xl.designpattern.adapter.Adapter2;
-import com.xl.designpattern.adapter.NetworkCable;
-import com.xl.designpattern.bridge.Apple;
-import com.xl.designpattern.bridge.Computer;
-import com.xl.designpattern.bridge.Dell;
-import com.xl.designpattern.bridge.Desktop;
-import com.xl.designpattern.bridge.Laptop;
-import com.xl.designpattern.chain.Director;
-import com.xl.designpattern.chain.GroupLeader;
-import com.xl.designpattern.chain.Leader;
-import com.xl.designpattern.chain.Manager;
-import com.xl.designpattern.factory.abstract1.Factory;
-import com.xl.designpattern.factory.abstract1.HuaweiFactory;
-import com.xl.designpattern.factory.abstract1.IPhone;
-import com.xl.designpattern.factory.abstract1.IRoute;
-import com.xl.designpattern.factory.abstract1.XiaoMiFactory;
-import com.xl.designpattern.factory.method.BYDFactory;
-import com.xl.designpattern.factory.method.WulingFactory;
-import com.xl.designpattern.factory.simple.Car;
-import com.xl.designpattern.factory.simple.SimpleFactory;
+import com.xl.designpattern.proxy.User;
+import com.xl.designpattern.proxy.static1.UserProxy;
 
 /**
  * Example local unit test, which will execute on the development machine (host).
@@ -88,12 +67,18 @@ public class ExampleUnitTest {
 ////      电脑连接 适配器，适配器连接网线 -> 上网
 //        computer.connect(adapter);
 
-//        bridge
-        Computer computer = new Desktop(new Apple());
-        Computer computer2 = new Laptop(new Dell());
+////        bridge
+//        Computer computer = new Desktop(new Apple());
+//        Computer computer2 = new Laptop(new Dell());
+//
+//        computer.getName();
+//        computer2.getName();
 
-        computer.getName();
-        computer2.getName();
+//        static proxy
 
+        User user = new User();
+        UserProxy userProxy = new UserProxy();
+        userProxy.setUser(user);
+        userProxy.add();
     }
 }
